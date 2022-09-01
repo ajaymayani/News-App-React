@@ -8,7 +8,7 @@ class NewsItem extends Component {
         return (
             <Container className='my-3'>
                 <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src={imageUrl} />
+                    <Card.Img variant="top" src={!imageUrl?"https://cdn.pixabay.com/photo/2017/01/08/13/58/cube-1963036_960_720.jpg":imageUrl} />
                     <Card.Body>
                         <Card.Title>{title}</Card.Title>
                         <Card.Text>{description}</Card.Text>
