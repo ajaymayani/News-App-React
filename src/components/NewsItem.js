@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Card, Button } from 'react-bootstrap';
+import { Container, Card } from 'react-bootstrap';
 
 class NewsItem extends Component {
 
@@ -12,7 +12,7 @@ class NewsItem extends Component {
                     <Card.Body>
                         <Card.Title>{title}</Card.Title>
                         <Card.Text>{description}</Card.Text>
-                        <a href={newsUrl} target="_blank" className="btn btn-primary btn-sm">Read More</a>
+                        <a href={newsUrl} rel="noreferrer" target="_blank" className="btn btn-primary btn-sm">Read More</a>
                     </Card.Body>
                 </Card>
             </Container>
