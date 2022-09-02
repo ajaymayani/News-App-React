@@ -9,7 +9,7 @@ import {
 import React from 'react';
 
 class App extends React.Component {
-  pageSize = 9;
+  pageSize = 5;
   render() {
     return (
 
@@ -26,7 +26,6 @@ class App extends React.Component {
           <Route exact path='/' element={<News key="general" pageSize={this.pageSize} category="general" />}></Route>
 
         </Routes>
-
       </Router>
     )
   };
