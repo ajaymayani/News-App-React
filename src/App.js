@@ -27,7 +27,8 @@ class App extends React.Component {
       <Router>
         <Header />
         <LoadingBar
-          color='blue'
+          color='red'
+          height={3}
           progress={this.state.progress}
         />
         <Routes>
