@@ -14,6 +14,7 @@ class News extends Component {
             totalResults: 0
         }
         document.title = this.capitalizeFirstLetter(this.props.category);
+        
     }
 
     capitalizeFirstLetter(str) {
@@ -21,17 +22,21 @@ class News extends Component {
     }
 
     async newsUpdate() {
+        this.props.setProgress(10);
         const url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}&apiKey=37e1c17a1df6403d821cc13d3fddb00c&page=${this.state.page}&pageSize=${this.props.pageSize}`;
         this.setState({
             loading: true
         })
         let response = await fetch(url);
+        this.props.setProgress(50);
         let data = await response.json();
+        this.props.setProgress(70);
         this.setState({
             articles: data.articles,
             totalResults: data.totalResults,
             loading: false
         })
+        this.props.setProgress(100);
     }
 
     async componentDidMount() {
